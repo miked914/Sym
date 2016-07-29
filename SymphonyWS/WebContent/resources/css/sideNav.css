@@ -1,0 +1,75 @@
+@CHARSET "ISO-8859-1";
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #4A90E2;
+    overflow-x: hidden;
+    transition: 0.45s;
+    padding-top: 15px;
+}
+
+.sidenav a {
+    padding: 5%; 
+/*    text-decoration: none;	*/
+    text-align: center;
+    font-size: 150%;
+    color: #F7F7F7;
+    display: block;
+    transition: 0.45s
+}
+
+/*.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+*/
+/*.closebtn {
+    position: absolute;
+    top: 0px;
+    right: 25px;
+    font-size: 36px !important;
+    margin-left: 85%;
+    hover: off;
+}
+*/
+.closebtn .offcanvas a:focus{
+	pointer-events: none;
+}
+
+.sidenav .navlogo {
+	display: block;
+	margin: auto;
+	width: 80%;
+	
+}
+
+.navlist {
+	margin-top: 5%;
+}
+
+/*
+#menuBtn {
+	margin: 2%;
+	width: 5%;
+}
+*/
+#main {
+    transition: margin-left .45s;	
+    padding: 16px;
+}
+
+#toppanel {
+	
+    transition: margin-left .45s;
+/*    padding: 16px;	*/
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

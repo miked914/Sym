@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:b="http://bootsfaces.net/ui"
+       xmlns:prime="http://primefaces.org/ui"
+       xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+	<body>
+		
+		<form id="form2" method="post" action="../rest/demo/appinfo" enctype="application/x-www-form-urlencoded">		
+						
+			<prime:panelGrid column="2">
+				<f:facet name="header">
+					<prime:row>
+						<prime:column colspan="2">Applicant Information</prime:column>
+					</prime:row>
+				</f:facet>
+				<prime:row>
+					<prime:column>
+						<b:inputText id="first" name="first" placeholder="" label="First Name:" required="true"></b:inputText>
+					</prime:column>
+					<prime:column>
+						<b:inputText id="middleInit" name="middleInit" placeholder="" label="Middle Name:" ></b:inputText>
+					</prime:column>
+				</prime:row>
+				<prime:row>
+					<prime:column>
+						<b:inputText id="last" name="last" placeholder="" label="Last Name:" required="true" ></b:inputText>
+					</prime:column>
+					<prime:column>
+						<b:inputText id="prefName" name="prefName" placeholder="" label="Preferred Name:" />
+					</prime:column>
+				</prime:row>
+				<prime:row>
+					<prime:column colspan="2">
+						<b:inputText id="sin" name="sin" placeholder="" label="Sin:" required="true" />
+					</prime:column>
+				</prime:row>
+				<prime:row>
+					<prime:column>
+						<b:inputText id="number" name="number" placeholder="" label="Phone Number:" required="true" />
+					</prime:column>
+					<prime:column>
+						<b:inputText id="amount" name="amount" placeholder="" label="Amount Requested:" required="true" />
+					</prime:column>
+				</prime:row>
+				<prime:row>
+					<prime:column colspan="2">
+						<prime:outputLabel for="question1">
+						Is this loan going to pay out an existing mortgage 
+						on the property that was 
+						taken out for the purpose of purchasing, 
+						renovating, or improving the property?
+						</prime:outputLabel> 
+						<prime:selectOneRadio id="question1" name="question1" required="true">
+							<f:selectItem itemLabel="Yes" itemValue="True"/>
+							<f:selectItem itemLabel="No" itemValue="false"/>
+						</prime:selectOneRadio>
+					</prime:column>
+				</prime:row>
+				<prime:row>
+					<prime:column colspan="2">
+						<prime:outputLabel for="question2">
+						Are you planning on using these funds to renovate or improve real property?
+						</prime:outputLabel> 
+						<prime:selectOneRadio id="question2" name="question2" required="true">
+							<f:selectItem itemLabel="Yes" itemValue="true"/>
+							<f:selectItem itemLabel="No" itemValue="false"/>
+						</prime:selectOneRadio>
+					</prime:column>
+				</prime:row>
+				<prime:row>
+					<prime:column colspan="2">
+						<prime:outputLabel for="question3">
+						Will this loan be used to purchase real property?
+						</prime:outputLabel> 
+						<prime:selectOneRadio id="question3" name="question3" required="true">
+							<f:selectItem itemLabel="Yes" itemValue="true"/>
+							<f:selectItem itemLabel="No" itemValue="false"/>
+						</prime:selectOneRadio>
+						<prime:commandButton type="submit" value="Save" styleClass="ui-priority-primary">
+<!-- 							<f:ajax execute="@all"/> -->
+						</prime:commandButton>
+					</prime:column>
+				</prime:row>								
+			</prime:panelGrid>		
+		</form>
+	</body>	
+	
+</html>

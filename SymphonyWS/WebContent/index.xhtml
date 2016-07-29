@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:b="http://bootsfaces.net/ui"
+       xmlns:prime="http://primefaces.org/ui"
+       xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<!-- 
+	xmlns:ac="http://beyondjava.net/angularFacesCore"
+	xmlns:prime="http://primefaces.org/ui">
+ -->
+ 
+	<h:head>
+    	<title>Welcome To Symphony</title>
+	<!--<h:outputScript library="js" name="sideNav.js"  />
+    	<h:outputStylesheet library="css" name="sideNav.css"/>		 --> 
+	</h:head>  
+  
+  <h:body >	
+  								<!--#########		NAVIGATION SIDE PANEL		##########-->
+    	<h:panelGroup layout="block" id="mySidenav" styleClass="sidenav">
+	  	 	<b:image value="/resources/images/CFNA_logo_mockup.gif" styleClass="navlogo" tooltip="Welcome To CitiFinancial"/>
+	  	 	<b:listLinks styleClass="navlist">	
+		  <!-- 	<b:navLink href="javascript:void(0)" styleClass="closebtn" onclick="closeNav()" >
+		  			<b:iconAwesome name="toggle-left fa-lg"></b:iconAwesome> 
+		  		</b:navLink>
+		  	-->		  			
+		        <b:navLink></b:navLink>
+		        <b:navLink href="#" value="Customers" icon-awesome="users fa-lg" iconAlign="left" />
+		        <b:navLink></b:navLink>
+		        <b:navLink href="#" value="Tools" icon-awesome="wrench fa-lg" iconAlign="left" />
+		        <b:navLink></b:navLink>
+		        <b:navLink href="#" value="Desktops" icon-awesome="desktop fa-lg" iconAlign="left" />
+		        <b:navLink></b:navLink>
+		        <b:navLink href="#" value="Windows" icon-awesome="windows fa-lg" iconAlign="left" />
+		        <b:navLink></b:navLink>
+		        <b:navLink href="#" value="Help" icon-awesome="question-circle fa-lg" iconAlign="left" />
+		        <b:navLink></b:navLink>
+		         <b:navLink href="#" value="Logout" icon-awesome="times-circle fa-lg" iconAlign="left"/>
+		        <b:navLink></b:navLink>                
+	  		</b:listLinks>	
+	 	</h:panelGroup>		  
+    										<!--###########		TOP PANEL		###########-->
+    <h:panelGroup layout="block" id="main">     
+	    <h:panelGroup layout="block" id="toppanel">	    
+	    	<b:buttonGroup id="menuBtn">
+	    		<!-- 	<b:iconAwesome name="navicon fa-2x"></b:iconAwesome>			-->
+	    		<b:button look="primary" iconAwesome="navicon fa-3x" value="" onclick="toggleNav()"></b:button>
+	    	</b:buttonGroup>	    	
+<!--     	<h:graphicImage library="images" name="Nav_Button.png" id="navButton"/>			-->
+	  		<h:panelGroup layout="block" id="appContainer">		  		
+		  		<h:graphicImage library="images" name="Button_Hiding_Info.png" id="appButton" onclick="onClick"/>		  		
+		  		<prime:panelGrid id="infoContainer" columns="2" layout="grid">
+			  		<h:outputText value="Applicant's Name: "/>
+		  			<h:outputText value="Application Status: " />
+		 			<h:outputText value="Co-Applicant's Name: " />
+		  			<h:outputText value="Account Number: " />
+		  		</prime:panelGrid>				  			   				
+	  		</h:panelGroup>	    	
+	    </h:panelGroup>
+	    					<!--######## 	SIDE NAVIGATION		########-->
+		<b:container classStyle="screencontainer" style="width: 100%; padding-top:1%">		
+			<b:column classStyle="navcontainer" span="3">
+				<h:panelGrid id="tabBar" columns="1">
+					<prime:commandButton value="Arrangements"/>
+					<prime:commandButton value="Demographics" action="#{viewController.setPage('Demographic')}"/>		
+					<prime:commandButton value="Employment"/>
+					<prime:commandButton value="Collateral"/>
+					<prime:commandButton value="Miscellaneous"/>
+					<prime:commandButton value="Credit Bureau"/>
+					<prime:commandButton value="Products"/>
+					<prime:commandButton value="Verification"/>
+					<prime:commandButton value="Closing"/>					
+		  		</h:panelGrid>			
+			</b:column>	 
+									<!--#######		 SCREEN CONTENT (TEMPLATES)		########-->
+			<b:column id="contentcontainer" span="9"  >
+		  	    <h:panelGroup id="content" layout="block" style="width:100%; height:100%">					
+<!-- 		   			<ui:include src="templates/initial.xhtml" /> -->
+	
+			   		<b:column id="form1col" class="col-xs-6 col-sm-4 col-md-4 col-lg-6 " style="width:50%;">
+			   			<ui:include src="templates/AppInfoForm.xhtml" />
+			   		</b:column>			   		
+			   		<b:column id="form2col" class="col-xs-6 col-sm-4 col-md-4 col-lg-6" style="width:50%;">
+			   			<ui:include src="templates/AppAddressForm.xhtml" />
+			   		</b:column>
+	<!-- 				<ui:include src="templates/Demographic.xhtml" /> -->
+	<!--  			    <ui:include src="templates/CreditBureau_Summary.xhtml" />			templates/initial.xhtml	 -->	  
+			   	</h:panelGroup>		
+			</b:column>			   
+   		</b:container>	  
+	</h:panelGroup> 
+	
+ 	<h:outputStylesheet library="css" name="main.css"/>		
+	<h:outputStylesheet library="css" name="sideNav.css"/>
+	<h:outputScript library="js" name="main.js"/>
+	<h:outputScript library="js" name="sideNav.js"  />    
+    
+  </h:body>  
+</html>

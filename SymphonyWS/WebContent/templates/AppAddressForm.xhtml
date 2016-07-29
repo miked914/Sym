@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:b="http://bootsfaces.net/ui"
+       xmlns:prime="http://primefaces.org/ui"
+       xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+	<body>
+<!-- 		<div id="formContent"> -->
+		<form id="form1" method="post" action="../rest/demo/addressinfo/setaddress" enctype="application/x-www-form-urlencoded">			
+			<prime:panelGrid column="2">
+				<f:facet name="header">
+					<prime:row>
+						<prime:column colspan="2">Applicant Address</prime:column>
+					</prime:row>
+				</f:facet>
+				<prime:row>
+					<prime:column colspan="2">
+						<b:inputText id="street" name="street" placeholder="Street Address #1" label="Street Address #1:" required="true"></b:inputText>
+					</prime:column>
+				</prime:row>
+				<prime:row>
+					<prime:column colspan="2">
+						<b:inputText id="street2" name="street2" placeholder="Street Address #2" label="Street Address #2:"></b:inputText>
+					</prime:column>
+				</prime:row>
+				<prime:row>
+					<prime:column>
+						<b:inputText id="city" name="city" placeholder="Entre Your City" label="City:" required="true"></b:inputText>
+					</prime:column>
+					<prime:column>
+						<b:inputText id="state" name="state" placeholder="Enter your Province" label="Province:" required="true"></b:inputText>
+					</prime:column>
+				</prime:row>
+				<prime:row style="border-style:none">
+					<prime:column>
+						<b:inputText id="country" name="country" placeholder="Enter Your Country" label="Country:" required="true"></b:inputText>
+					</prime:column>
+					<prime:column>
+						<b:inputText id="postalCode" name="postalCode" placeholder="" label="Postal Code:" required="true"></b:inputText>
+					</prime:column>
+				</prime:row>
+				<prime:row>				
+					<prime:column colspan="1" style="border-style:none">
+						<b:inputText id="residenceTime" name="residenceTime" placeholder="yy-mm" label="Time at Residence:" required="true"></b:inputText>
+					</prime:column>
+					<prime:column colspan="1" style="border-left-style:none ">
+						<prime:commandButton type="submit" value="Save" styleClass="ui-priority-primary" >
+ 							<f:ajax execute="@all"/> 						
+						</prime:commandButton>
+					</prime:column>
+				</prime:row>
+			</prime:panelGrid>			
+		</form>	
+<!-- 		</div> -->
+	</body>	
+	
+</html>
